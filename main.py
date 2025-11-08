@@ -11,8 +11,8 @@ def get_course(base, target, amount, api_key):
     response.raise_for_status()
     currency = response.json()["conversion_rates"]
     target_rate = float(currency[target])
-    ready = amount * target_rate
-    return ready
+    converted_amount = amount * target_rate
+    return converted_amount
 
 
 def main():
